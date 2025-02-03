@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  font-family: "Press Start 2P", serif;
+  font-weight: 400;
+  font-style: normal;
+
+  background: #5b76ff;
+  color: #fff;
+}
+
+
+#game{
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+    justify-content: center;
+}
+
+#game{
+    margin: 10%;
+}
+
+#grid{
+    width: 360px;
+    height: 360px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+
+    justify-content: space-between;
+    align-content: space-between;
+    
+}
+
+#cell{
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 5px solid #fff;
+}
+
+#cell p{
+    font-size: 58px;
+    margin: auto;
+    vertical-align: middle;
+    text-align: center;
+}
