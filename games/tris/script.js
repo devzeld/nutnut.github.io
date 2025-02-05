@@ -4,6 +4,8 @@ let turn = 1;
 
 const grid = document.querySelectorAll("#grid #cell");
 
+const gameAlert = document.querySelector(".game-alert");
+
 for (let i = 0; i < grid.length; i++) {
     
     let cell = grid[i];
@@ -11,6 +13,7 @@ for (let i = 0; i < grid.length; i++) {
     cell.addEventListener("click", event => {
         console.table(table);
         console.log(turn);
+        
         let sign = turn % 2 === 0 ? "X" : "O" 
 
         if (table[i]) {
@@ -25,7 +28,7 @@ for (let i = 0; i < grid.length; i++) {
         }
 
         if (hasWon()) {
-            alert("Vittoria: " + sign);
+            displayAlert(sign);
         }
 
         turn++;
@@ -58,5 +61,12 @@ function hasWon() {
     }
 
     return false;
+}
+
+
+function displayAlert(sign) {
+    const alert = gameAlert.querySelector(".alert-message");
+
+    alert.textContent = "Ha vinto: " + sign; 
 }
 
