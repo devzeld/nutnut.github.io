@@ -14,21 +14,23 @@ for (let i = 0; i < grid.length; i++) {
         console.table(table);
         console.log(turn);
         
-        let sign = turn % 2 === 0 ? "X" : "O" 
+        let sign = turn % 2 === 0 ? "X" : "O";
 
         if (table[i]) {
             return;
         }
 
-        cell.querySelector("p").innerHTML = sign;
+        cell.querySelector("p").textContent = sign;
         table[i] = sign;
 
         if(turn === 9){
+            displayAlert("pareggio");
             return;
         }
 
         if (hasWon()) {
-            displayAlert(sign);
+            displayAlert("Ha vinto: " + sign);
+            losingIncourage(sign);
         }
 
         turn++;
@@ -42,7 +44,7 @@ function hasWon() {
         [6, 7, 8],
         [0, 3, 6],
         [1, 4, 7],
-        [2, 5, 6],
+        [2, 5, 8],
         [0, 4, 8],
         [2, 4, 6]
     ]
@@ -67,6 +69,17 @@ function hasWon() {
 function displayAlert(sign) {
     const alert = gameAlert.querySelector(".alert-message");
 
-    alert.textContent = "Ha vinto: " + sign; 
+    alert.textContent = sign;
+}
+
+function losingIncourage(name) {
+    const alert = gameAlert.querySelector(".losing-message");
+
+    const encourages = ["Sarà per la prossima volta " + name, "Il tuo avversario ha avuto solo fortuna, " + name, "Ti servirebbe un pò di allenamento " + name];
+
+
+    let rN = Math.random() * 10 / 2;
+    console.log(rN.toFixed());
+    alert.textContent = encourages[rN.toFixed()];
 }
 
