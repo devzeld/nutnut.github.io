@@ -1,4 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root{
+    --prussian-blue: #13293dff;
+    --lapis-lazuli: #006494ff;
+    --cerulean: #247ba0ff;
+    --celestial-blue: #1b98e0ff;
+    --alice-blue: #e8f1f2ff;
+}
 
 html{
     height: 100%;

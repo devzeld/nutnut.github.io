@@ -1,4 +1,3 @@
-
 const table = []; 
 let turn = 1;
 
@@ -7,7 +6,6 @@ const grid = document.querySelectorAll("#grid #cell");
 const gameAlert = document.querySelector(".game-alert");
 
 for (let i = 0; i < grid.length; i++) {
-    
     let cell = grid[i];
 
     cell.addEventListener("click", event => {
@@ -72,6 +70,7 @@ function displayAlert(sign) {
     alert.textContent = sign;
 }
 
+//abbastanza inutile
 function losingIncourage(name) {
     const alert = gameAlert.querySelector(".losing-message");
 
